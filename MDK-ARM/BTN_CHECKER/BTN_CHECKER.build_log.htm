@@ -27,12 +27,12 @@ Project File Date:  01/12/2023
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'BTN_CHECKER'
-compiling ssd1306.c...
-"no source": Error:  #5: cannot open source input file "D:\ssd1306.c": No such file or directory
-D:\ssd1306.c: 0 warnings, 1 error
 compiling fonts.c...
 "no source": Error:  #5: cannot open source input file "D:\fonts.c": No such file or directory
 D:\fonts.c: 0 warnings, 1 error
+compiling ssd1306.c...
+"no source": Error:  #5: cannot open source input file "D:\ssd1306.c": No such file or directory
+D:\ssd1306.c: 0 warnings, 1 error
 compiling main.c...
 C:\Users\Lenovo\Documents\Kuliah\KRI\BTN_CHECKER\MDK-ARM\RTE\_BTN_CHECKER\ssd1306.h(238): warning:  #1295-D: Deprecated declaration ssd1306_I2C_Init - give arg types
   void ssd1306_I2C_Init();
@@ -48,43 +48,59 @@ NHBTN1_Pin, 1);
   			SSD1306_Puts (tampil, &Font_11x18, 1);
 ../Core/Src/main.c(212): warning:  #188-D: enumerated type mixed with another type
   			SSD1306_Puts (tampil, &Font_11x18, 1);
-../Core/Src/main.c(218): warning:  #188-D: enumerated type mixed with another type
-  		HAL_GPIO_WritePin(
-IRBTN1_GPIO_Port,
-IRBTN1_Pin,0);
 ../Core/Src/main.c(219): warning:  #188-D: enumerated type mixed with another type
-  		HAL_GPIO_WritePin(
+  				HAL_GPIO_WritePin(
+IRBTN1_GPIO_Port, 
+IRBTN1_Pin, 0);
+../Core/Src/main.c(220): warning:  #188-D: enumerated type mixed with another type
+  				HAL_GPIO_WritePin(
+IRBTN2_GPIO_Port, 
+IRBTN2_Pin, 0);
+../Core/Src/main.c(224): warning:  #188-D: enumerated type mixed with another type
+  				HAL_GPIO_WritePin(
+IRBTN1_GPIO_Port,
+IRBTN1_Pin,1);
+../Core/Src/main.c(225): warning:  #188-D: enumerated type mixed with another type
+  				HAL_GPIO_WritePin(
 IRBTN2_GPIO_Port,
-IRBTN2_Pin,0);
-../Core/Src/main.c(221): warning:  #188-D: enumerated type mixed with another type
+IRBTN2_Pin,1);
+../Core/Src/main.c(228): warning:  #188-D: enumerated type mixed with another type
   		HAL_GPIO_WritePin(
 IRRELAY_GPIO_Port, 
 IRRELAY_Pin, 1);
-../Core/Src/main.c(224): warning:  #188-D: enumerated type mixed with another type
-  				SSD1306_Puts ("Maju  ", &Font_11x18, 1);
-../Core/Src/main.c(230): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(
-IRBTN1_GPIO_Port,
-IRBTN1_Pin,1);
 ../Core/Src/main.c(231): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(
+  				SSD1306_Puts ("Maju  ", &Font_11x18, 1);
+../Core/Src/main.c(240): warning:  #188-D: enumerated type mixed with another type
+  				HAL_GPIO_WritePin(
+IRBTN1_GPIO_Port, 
+IRBTN1_Pin, 1);
+../Core/Src/main.c(241): warning:  #188-D: enumerated type mixed with another type
+  				HAL_GPIO_WritePin(
+IRBTN2_GPIO_Port, 
+IRBTN2_Pin, 1);
+../Core/Src/main.c(245): warning:  #188-D: enumerated type mixed with another type
+  				HAL_GPIO_WritePin(
+IRBTN1_GPIO_Port,
+IRBTN1_Pin,0);
+../Core/Src/main.c(246): warning:  #188-D: enumerated type mixed with another type
+  				HAL_GPIO_WritePin(
 IRBTN2_GPIO_Port,
-IRBTN2_Pin,1);
-../Core/Src/main.c(233): warning:  #188-D: enumerated type mixed with another type
+IRBTN2_Pin,0);
+../Core/Src/main.c(249): warning:  #188-D: enumerated type mixed with another type
   			HAL_GPIO_WritePin(
 IRRELAY_GPIO_Port, 
 IRRELAY_Pin, 0);
-../Core/Src/main.c(235): warning:  #188-D: enumerated type mixed with another type
+../Core/Src/main.c(251): warning:  #188-D: enumerated type mixed with another type
   			SSD1306_Puts ("Mundur", &Font_11x18, 1);
 ../Core/Src/main.c(145): warning:  #177-D: variable "snum"  was declared but never referenced
     char snum[5];
 ../Core/Src/main.c(166): warning:  #177-D: variable "value"  was declared but never referenced
   	int value = 0;
-../Core/Src/main.c: 16 warnings, 0 errors
+../Core/Src/main.c: 20 warnings, 0 errors
 linking...
-Program Size: Code=8364 RO-data=3712 RW-data=36 ZI-data=2884  
+Program Size: Code=8412 RO-data=3712 RW-data=36 ZI-data=2884  
 FromELF: creating hex file...
-"BTN_CHECKER\BTN_CHECKER.axf" - 0 Error(s), 16 Warning(s).
+"BTN_CHECKER\BTN_CHECKER.axf" - 0 Error(s), 20 Warning(s).
 
 <h2>Software Packages used:</h2>
 

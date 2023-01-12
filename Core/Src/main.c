@@ -215,8 +215,15 @@ HAL_GPIO_WritePin(INHBTN1_GPIO_Port, INHBTN1_Pin, 1);
 //		
 		//Maju
 		if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_1)==0){
-		HAL_GPIO_WritePin(DIRBTN1_GPIO_Port,DIRBTN1_Pin,0);
-		HAL_GPIO_WritePin(DIRBTN2_GPIO_Port,DIRBTN2_Pin,0);
+			if(hasil>=0){
+				HAL_GPIO_WritePin(DIRBTN1_GPIO_Port, DIRBTN1_Pin, 0);
+				HAL_GPIO_WritePin(DIRBTN2_GPIO_Port, DIRBTN2_Pin, 0);
+			}
+			else{
+				hasil = 100+hasil;
+				HAL_GPIO_WritePin(DIRBTN1_GPIO_Port,DIRBTN1_Pin,1);
+				HAL_GPIO_WritePin(DIRBTN2_GPIO_Port,DIRBTN2_Pin,1);
+			}
 		//relay==1;
 		HAL_GPIO_WritePin(DIRRELAY_GPIO_Port, DIRRELAY_Pin, 1);
 			
@@ -227,8 +234,17 @@ HAL_GPIO_WritePin(INHBTN1_GPIO_Port, INHBTN1_Pin, 1);
 		
 		//Mundur
 		else if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)==0){
-			HAL_GPIO_WritePin(DIRBTN1_GPIO_Port,DIRBTN1_Pin,1);
-			HAL_GPIO_WritePin(DIRBTN2_GPIO_Port,DIRBTN2_Pin,1);
+//			HAL_GPIO_WritePin(DIRBTN1_GPIO_Port,DIRBTN1_Pin,0);
+//			HAL_GPIO_WritePin(DIRBTN2_GPIO_Port,DIRBTN2_Pin,0);
+			if(hasil>=0){
+				HAL_GPIO_WritePin(DIRBTN1_GPIO_Port, DIRBTN1_Pin, 1);
+				HAL_GPIO_WritePin(DIRBTN2_GPIO_Port, DIRBTN2_Pin, 1);
+			}
+			else{
+				hasil = 100+hasil;
+				HAL_GPIO_WritePin(DIRBTN1_GPIO_Port,DIRBTN1_Pin,0);
+				HAL_GPIO_WritePin(DIRBTN2_GPIO_Port,DIRBTN2_Pin,0);
+			}
 			//relay==0;
 			HAL_GPIO_WritePin(DIRRELAY_GPIO_Port, DIRRELAY_Pin, 0);
 			SSD1306_GotoXY (20,10);
